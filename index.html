@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#087f5b">
+<title>100GB মোবাইল ডাটা বোনাস — 100GB মোবাইল ডাটা বোনাস</title>
+<style>
+:root{--green:#087f5b;--green2:#0ca678;--gold:#f6c453;--pink:#e83e8c;--blue:#1971c2;--red:#e03131;--ink:#17212b;--muted:#667085}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:radial-gradient(circle at 10% 10%,#fff1a8 0 8%,transparent 9%),radial-gradient(circle at 90% 0%,#c7f9e8 0 9%,transparent 10%),linear-gradient(135deg,#fff8df 0%,#e6fff7 48%,#eef5ff 100%);color:var(--ink);font-family:"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif}
+.page{width:min(100%,460px);margin:0 auto;background:#fff;min-height:100vh;box-shadow:0 0 35px #00000018;overflow:hidden}
+.top{padding:9px 12px;background:linear-gradient(90deg,#063b2c,#087f59,#10b981);color:#fff}
+.back{display:inline-block;color:#fff;text-decoration:none;font-size:13px;border:1px solid #ffffff55;border-radius:8px;padding:4px 9px}
+.top-title{font-size:13px;font-weight:800;letter-spacing:.2px;text-align:center;margin-top:-22px;pointer-events:none}
+.hero{padding:10px;background:linear-gradient(135deg,#0b6e4f,#15a273,#ffd166,#f97316)}
+.hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 12px 30px #063b2c30}
+.content{padding:16px 14px 22px;text-align:center}
+h1{margin:2px 0 8px;color:#0b6e4f;font-size:26px;line-height:1.25}
+.sub{font-size:14px;color:#475467;line-height:1.6;margin-bottom:12px}
+.offer{background:linear-gradient(135deg,#fff3bf,#fffaf0);border:2px solid #f6c453;border-radius:14px;padding:11px 12px;font-size:14px;line-height:1.6}
+.claim{width:100%;border:0;border-radius:11px;padding:14px 12px;margin-top:12px;color:#fff;font-size:18px;font-weight:900;cursor:pointer;background:linear-gradient(90deg,#0b7d56,#12b886);box-shadow:0 8px 16px #0b7d5633}
+.row{display:flex;gap:8px;margin-top:11px}
+.row input{flex:1;min-width:0;padding:13px 12px;border:2px solid #93c5fd;border-radius:11px;font-size:16px;outline:none}
+.row input:focus{border-color:#1971c2;box-shadow:0 0 0 3px #1971c21a}
+.submit{width:118px;border:0;border-radius:11px;background:linear-gradient(90deg,#1971c2,#4dabf7);color:#fff;font-weight:900;font-size:15px;cursor:pointer}
+.panel{margin-top:12px;border-radius:16px;padding:14px;background:linear-gradient(145deg,#fffdf4,#f4fffb,#f4f8ff);border:1px solid #e3eee9;text-align:center;box-shadow:0 8px 22px #087f5b0b}
+.panel h2{font-size:18px;margin:0 0 5px;color:#183153}.panel p{font-size:13px;line-height:1.55;margin:0 0 10px;color:#667085}
+.share{background:linear-gradient(90deg,#4267b2,#1877f2)}.done{background:linear-gradient(90deg,#f08c00,#fab005)}.claim-final{background:linear-gradient(90deg,#e03131,#f76707)}
+.small{font-size:11px;color:#868e96;line-height:1.5;margin-top:8px}.status{font-size:13px;font-weight:800;margin-top:8px;min-height:20px}
+.stats{display:flex;justify-content:space-between;padding:11px 8px;border-top:1px solid #e5eee9;border-bottom:1px solid #e5eee9;margin-top:14px;color:#667085;font-size:12px;background:linear-gradient(90deg,#fff,#f8fffc,#fff);border-radius:10px}
+.comments{text-align:left}.comment{cursor:pointer}.comments-title{font-size:15px;font-weight:900;margin:13px 0 4px}
+.comment{display:flex;gap:9px;padding:11px 2px;border-bottom:1px solid #f1f3f5}.avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#dee2e6,#adb5bd);flex:none}
+.name{font-size:13px;font-weight:900}.tag{font-size:9px;font-weight:700;color:#6c757d;background:#e9ecef;padding:2px 5px;border-radius:5px;margin-left:3px}
+.txt{font-size:12px;line-height:1.5;color:#495057;margin-top:2px}.footer{padding:15px;text-align:center;font-size:11px;color:#868e96;background:#f8f9fa}.hidden{display:none!important}
+
+/* Enhanced offer / share / comments UI */
+.hero-link{display:block;text-decoration:none;color:inherit;position:relative}
+.hero-link::after{display:none}
+@keyframes heroPulse{0%,100%{opacity:.86;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.04)}}
+.offer-lead{background:linear-gradient(135deg,#e8fff5,#f6fffb);border:1px solid #9de3c4;border-radius:14px;padding:12px 13px;font-size:15px;font-weight:900;color:#075b43;margin:2px 0 12px}
+.claim-slot{position:relative}
+.claim.reveal{animation:claimSwap .38s ease both}
+@keyframes claimSwap{0%{transform:scale(.97);opacity:.5}55%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}
+.phone-card{display:grid;grid-template-columns:1fr 118px;gap:8px;margin-top:12px;padding:10px;background:#f6fbff;border:1px solid #cfe2f4;border-radius:13px;animation:claimSwap .4s ease both}
+.phone-card input{width:100%;padding:13px 12px;border:2px solid #93c5fd;border-radius:11px;font-size:16px;outline:none;background:#fff}
+.phone-card input:focus{border-color:#1971c2;box-shadow:0 0 0 3px #1971c21a}
+.phone-submit{border:0;border-radius:11px;background:linear-gradient(90deg,#0b7d56,#12b886);color:#fff;font-weight:900;font-size:15px;cursor:pointer}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.actions .claim{flex:1;min-width:145px}
+.like-row{display:flex;align-items:center;gap:9px;margin-top:7px}.like-btn{border:0;background:#fff;color:#6c757d;font-weight:800;cursor:pointer;padding:4px 7px;border-radius:8px}.like-btn.liked{color:#e03131;background:#fff0f0}.comment-form{margin-top:12px;padding:12px;border:1px solid #dfece7;border-radius:14px;background:linear-gradient(145deg,#fbfffd,#f7faff);box-shadow:0 7px 18px #087f5b08}.comment-form .cf-row{display:flex;gap:8px}.comment-form input,.comment-form textarea{width:100%;padding:10px 11px;border:1px solid #ced4da;border-radius:10px;font-family:inherit;font-size:13px;outline:none;background:#fff}.comment-form textarea{min-height:70px;resize:vertical;margin-top:8px}.comment-send{margin-top:8px;width:100%;border:0;border-radius:10px;padding:11px;background:#0b7d56;color:#fff;font-weight:900;cursor:pointer}.comment .avatar{display:grid;place-items:center;color:#fff;font-weight:900;font-size:13px}.comment-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap}.time{font-size:10px;color:#868e96}.stats button{border:0;background:none;color:inherit;font:inherit;cursor:pointer}
+
+.share-step-inline{margin-top:12px;padding:14px 11px 10px;text-align:center;background:linear-gradient(145deg,#ffffff,#f5fffb,#f5f9ff);border:1px solid #e0eee9;border-radius:16px;box-shadow:0 9px 24px #087f5b0c;animation:claimSwap .42s ease both}
+.share-step-inline h2{font-size:19px;margin:0 0 5px;color:#0b6e4f;font-weight:900}
+.share-step-inline p{font-size:13px;line-height:1.55;color:#667085;margin:0 0 10px}
+.share-main{width:100%;border:0;border-radius:11px;padding:14px 12px;color:#fff;font-size:17px;font-weight:900;cursor:pointer;background:linear-gradient(90deg,#4267b2,#1877f2);box-shadow:0 8px 16px #1877f233}
+.share-main:active{transform:scale(.985)}
+.share-alt-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.share-alt{border:0;border-radius:11px;padding:12px 10px;color:#fff;font-size:15px;font-weight:900;cursor:pointer;box-shadow:0 7px 14px #00000012}
+.share-wa{background:linear-gradient(90deg,#128c7e,#25d366)}
+.share-ms{background:linear-gradient(90deg,#4267b2,#1877f2)}
+.share-main[disabled],.share-alt[disabled]{opacity:.6;cursor:default}
+.share-helper{font-size:11px;color:#667085;line-height:1.5;margin-top:7px}
+.share-countdown.ready{background:#effcf6;border-color:#b7ebd1;color:#087f5b}
+.claim-return{width:100%;border:0;border-radius:11px;padding:14px 12px;color:#fff;font-size:17px;font-weight:900;cursor:pointer;background:linear-gradient(90deg,#e03131,#f76707);box-shadow:0 8px 16px #e0313133;margin-top:9px}
+.share-return-note{font-size:11px;color:#868e96;line-height:1.5;margin-top:8px}
+.share-countdown{margin-top:9px;padding:10px 12px;border-radius:10px;background:#eef7ff;border:1px solid #cfe2f4;color:#245b85;font-size:13px;font-weight:900;display:none}
+.share-countdown .num{font-size:24px;line-height:1;font-variant-numeric:tabular-nums}
+.share-progress{height:6px;border-radius:999px;background:#dbeafe;overflow:hidden;margin-top:8px}
+.share-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1971c2,#4dabf7);transition:width .2s linear}
+.comments-title .tag{vertical-align:middle;font-size:9px}
+.demo-note{font-size:11px;color:#868e96;margin:-2px 0 8px}.comment[data-demo="1"]{animation:commentIn .35s ease both}@keyframes commentIn{from{opacity:.0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.share-target{display:flex;align-items:center;justify-content:center;gap:8px;margin:9px 0;padding:10px;border-radius:12px;background:linear-gradient(135deg,#effff8,#f2f9ff);border:1px solid #b7ebd1;color:#087f5b;box-shadow:inset 0 1px #fff}.share-target strong{font-size:22px}.share-target span{font-size:12px;font-weight:800}.confirm-share{width:100%;border:0;border-radius:11px;padding:12px;color:#fff;background:linear-gradient(90deg,#0b7d56,#12b886);font-weight:900;font-size:14px;cursor:pointer;margin-top:9px}.confirm-share:disabled{opacity:.6;cursor:default}.reward-ready{margin-top:10px;padding:12px;border-radius:14px;background:linear-gradient(135deg,#fff9e7,#fff4d6);border:1px solid #ffe08a;color:#7a5200;text-align:center;font-weight:800;box-shadow:0 8px 18px #f08c000f}.reward-btn{display:block;width:100%;border:0;border-radius:11px;padding:12px;margin-top:8px;background:linear-gradient(90deg,#f08c00,#fab005);color:#fff;font-weight:900;cursor:pointer}.reward-note{font-size:11px;line-height:1.5;color:#667085;margin-top:6px}@media(max-width:380px){.phone-card{grid-template-columns:1fr}.phone-submit{padding:12px}.actions .claim{min-width:100%}}
+
+
+/* Sponsored offer UI — compact, colorful, mobile-first */
+.sponsored-offer{position:relative;margin-top:10px;padding:11px;border:1px solid #cfe7ff;background:linear-gradient(145deg,#f8fcff 0%,#eef8ff 52%,#f3fffa 100%);border-radius:16px;text-align:left;box-shadow:0 10px 24px #0b6e4f12, inset 0 1px #ffffff;animation:claimSwap .38s ease both;overflow:hidden}
+.sponsored-offer::before{content:'';position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#1971c2,#12b886,#f6c453);}
+.sponsor-label{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:900;letter-spacing:.45px;text-transform:uppercase;color:#155e75;background:#e8f7ff;border:1px solid #c8e9fb;border-radius:999px;padding:4px 7px}.sponsor-label::before{content:'•';font-size:14px;line-height:0;color:#12b886}
+.sponsor-title{font-size:14px;font-weight:900;color:#17324d;margin-top:6px}.sponsor-sub{font-size:10.5px;line-height:1.45;color:#667085;margin-top:3px}.sponsor-btn{display:block;text-align:center;text-decoration:none;margin-top:8px;padding:10px;border-radius:10px;color:#fff;background:linear-gradient(90deg,#1971c2,#4dabf7);font-weight:900;font-size:13px;box-shadow:0 6px 14px #1971c21f;transition:transform .18s ease,filter .18s ease}.sponsor-btn:active{transform:scale(.98);filter:brightness(.97)}.sponsored-offer.hidden{display:none!important}
+.sponsor-preview{position:relative;margin-top:8px;padding:8px 9px;border:1px solid #bfe4d4;border-radius:12px;background:linear-gradient(135deg,#ffffff 0%,#f1fff9 100%);font-size:10px;color:#526b7d;line-height:1.35;box-shadow:0 6px 16px #087f5b0d;overflow:hidden}
+.sponsor-preview::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(#12b886,#1971c2)}
+.sponsor-preview strong{display:flex;align-items:center;gap:5px;font-size:10.5px;color:#17324d;margin-bottom:3px;padding-left:4px}.sponsor-preview strong::before{content:'🎁';font-size:12px}
+.preview-card-link{display:block;color:inherit;text-decoration:none}.sponsor-preview a{display:block}.preview-card-link:focus-visible{outline:2px solid #1971c2;outline-offset:2px;border-radius:12px}.preview-cta{display:inline-flex;align-items:center;justify-content:center;gap:4px;background:#087f5b;color:#fff;padding:6px 8px;border-radius:8px;font-size:9.5px;font-weight:900;margin-top:4px}.preview-card-link:active .sponsor-preview-media{transform:scale(.992)}
+.next-sponsor{width:100%;border:0;border-radius:10px;padding:10px;color:#fff;font-size:13px;font-weight:900;cursor:pointer;background:linear-gradient(90deg,#0b7d56,#12b886);box-shadow:0 6px 14px #0b7d5630;margin-top:8px}
+
+/* Compact countdown card */
+.share-countdown{margin-top:9px;padding:10px;border-radius:14px;background:linear-gradient(135deg,#eef8ff 0%,#f2fff9 100%);border:1px solid #cfe7f5;color:#245b85;font-size:12px;font-weight:900;box-shadow:0 7px 18px #1971c20c}
+.share-countdown>div:first-child{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}.share-countdown .num{display:inline-grid;place-items:center;min-width:34px;height:30px;padding:0 6px;font-size:19px;line-height:1;font-variant-numeric:tabular-nums;color:#fff;background:linear-gradient(135deg,#087f5b,#12b886);border-radius:9px;box-shadow:0 4px 10px #087f5b25}
+.share-progress{height:5px;border-radius:999px;background:#dcecf6;overflow:hidden;margin-top:7px}.share-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1971c2,#12b886,#f6c453);transition:width .2s linear;border-radius:999px}
+@media(max-width:380px){.sponsored-offer{padding:10px;border-radius:14px}.sponsor-title{font-size:13px}.sponsor-sub{font-size:10px}.sponsor-btn,.next-sponsor{padding:9px;font-size:12px}.sponsor-preview{padding:7px 8px}.share-countdown{padding:9px}.share-countdown .num{min-width:32px;height:28px;font-size:18px}}
+
+
+/* Reward confirmation modal */
+.reward-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:18px;background:rgba(8,31,25,.58);backdrop-filter:blur(5px)}
+.reward-modal.hidden{display:none!important}
+.reward-modal-card{width:min(100%,390px);border-radius:22px;padding:18px;background:linear-gradient(145deg,#ffffff,#f1fff8 58%,#eef6ff);border:1px solid #d5eee3;box-shadow:0 24px 70px rgba(0,0,0,.24);text-align:center;animation:modalIn .28s ease both}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.reward-modal-icon{width:58px;height:58px;margin:0 auto 8px;display:grid;place-items:center;border-radius:50%;font-size:29px;background:linear-gradient(135deg,#fff3bf,#ffe08a);box-shadow:0 8px 18px #f08c001c}
+.reward-modal-card h3{margin:0;color:#075b43;font-size:19px}.reward-modal-card p{margin:7px 0 12px;color:#667085;font-size:12.5px;line-height:1.55}
+.reward-modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.reward-modal-actions button{border:0;border-radius:11px;padding:12px 9px;font-weight:900;font-size:13px;cursor:pointer}.reward-ok{color:#fff;background:linear-gradient(90deg,#0b7d56,#12b886)}.reward-again{color:#075b43;background:#e8fff5;border:1px solid #9de3c4!important}
+.admin-wa-note{margin-top:8px;font-size:10px;color:#868e96;line-height:1.45}
+.return-claim{display:block;width:100%;margin-top:9px;border:0;border-radius:11px;padding:13px 12px;background:linear-gradient(90deg,#f08c00,#fab005);color:#fff;font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 7px 16px #f08c0026}
+.reward-ready-note{margin-top:9px;padding:9px 10px;border-radius:11px;background:linear-gradient(135deg,#effcf6,#fff9e7);border:1px solid #bfe6d5;color:#1f6f55;font-size:11px;font-weight:800;text-align:center}.reward-ready-note.hidden{display:none!important}
+.sponsor-optional{margin-top:9px;padding:9px;border-radius:12px;background:linear-gradient(135deg,#f7fbff,#f4fff9);border:1px solid #d7e9e2;font-size:11px;color:#667085;text-align:center}
+
+.reward-ok,.reward-again,.return-claim,.claim-return,.confirm-share,.share-alt,.phone-submit,.sponsor-btn,.next-sponsor{transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}.reward-ok:hover,.reward-again:hover,.return-claim:hover,.claim-return:hover,.confirm-share:hover,.share-alt:hover,.phone-submit:hover,.sponsor-btn:hover,.next-sponsor:hover{transform:translateY(-1px);filter:saturate(1.06);box-shadow:0 9px 20px #00000018}.reward-ok:active,.reward-again:active,.return-claim:active,.claim-return:active,.confirm-share:active,.share-alt:active,.phone-submit:active,.sponsor-btn:active,.next-sponsor:active{transform:translateY(1px) scale(.99)}
+
+
+/* Campaign return-visit progress */
+.visit-progress{margin:10px 0 0;padding:9px 10px;border-radius:13px;background:linear-gradient(135deg,#f7fbff,#f1fff8);border:1px solid #d8eae4;box-shadow:0 6px 16px rgba(8,127,91,.06)}
+.visit-progress-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.visit-progress-label{font-size:11px;font-weight:900;color:#31566d;text-align:left}.visit-progress-count{font-size:12px;font-weight:900;color:#087f5b;background:#e9fff5;border:1px solid #bfe6d5;padding:4px 7px;border-radius:999px}.visit-track{height:6px;background:#e6eef4;border-radius:999px;overflow:hidden;margin-top:7px}.visit-track i{display:block;width:0;height:100%;background:linear-gradient(90deg,#1971c2,#12b886,#f6c453);border-radius:999px;transition:width .35s ease}.visit-note{margin-top:5px;font-size:9.5px;line-height:1.4;color:#7a8793;text-align:left}.visit-done{border-color:#b7ebd1;background:linear-gradient(135deg,#f0fff8,#fffdf1)}
+.sponsor-ad-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 6px;border-radius:999px;background:#edf7ff;border:1px solid #cfe7ff;color:#155e75;font-size:8px;font-weight:900;letter-spacing:.5px}.sponsor-ad-badge::before{content:'•';color:#12b886;font-size:12px;line-height:0}.sponsor-preview-copy a.preview-cta{display:inline-flex;align-items:center;justify-content:center;gap:4px;width:auto;min-width:108px;margin-top:5px;padding:5px 7px;border-radius:8px;color:#fff;background:linear-gradient(90deg,#1971c2,#4dabf7);border:0;font-size:9px;font-weight:900;box-shadow:0 4px 10px rgba(25,113,194,.16);white-space:nowrap}.sponsor-preview-copy a.preview-cta::after{content:'↗';color:#fff}.sponsor-preview-media{grid-template-columns:44px minmax(0,1fr) 28px}.sponsor-preview-copy .preview-domain{display:block;font-size:8.5px;color:#7a8793;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+@media(max-width:380px){.visit-progress{padding:8px 9px}.visit-progress-label{font-size:10.5px}.sponsor-preview-media{grid-template-columns:42px minmax(0,1fr) 26px}.sponsor-preview-media img{width:42px;height:42px}.sponsor-preview-copy a.preview-cta{min-width:102px;padding:5px 6px;font-size:8.8px}}
+
+/* === Final mobile polish === */
+:root{--shadow-soft:0 12px 34px rgba(16,72,53,.10);--shadow-float:0 18px 42px rgba(4,78,57,.16)}
+html{scroll-behavior:smooth;background:#dff7ef}
+body{min-height:100vh;position:relative;overflow-x:hidden;background:
+  radial-gradient(circle at 8% 4%,rgba(255,222,89,.40) 0 38px,transparent 39px),
+  radial-gradient(circle at 94% 10%,rgba(43,210,145,.25) 0 52px,transparent 53px),
+  linear-gradient(145deg,#fffaf0 0%,#f2fffb 46%,#eef5ff 100%);}
+body::before,body::after{content:"";position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(1px);opacity:.55}
+body::before{width:180px;height:180px;left:-90px;top:24%;background:radial-gradient(circle,#ffe082 0 18%,transparent 19%);box-shadow:120px 230px 0 -44px #ff9f9f,260px -180px 0 -56px #8ce3c2;animation:floatOrb 9s ease-in-out infinite}
+body::after{width:210px;height:210px;right:-105px;bottom:16%;background:radial-gradient(circle,#95d5ff 0 17%,transparent 18%);box-shadow:-130px -250px 0 -48px #ffd6a5, -260px 120px 0 -54px #d0b7ff;animation:floatOrb 11s ease-in-out infinite reverse}
+@keyframes floatOrb{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(0,-14px,0) rotate(5deg)}}
+.page{position:relative;z-index:1;width:min(100%,468px);background:linear-gradient(180deg,#ffffff 0%,#fbfffd 42%,#ffffff 100%);box-shadow:0 22px 70px rgba(24,83,63,.18);border-left:1px solid rgba(8,127,91,.06);border-right:1px solid rgba(8,127,91,.06)}
+.page::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#12b886,#1971c2,#f6c453,#e83e8c,#12b886);background-size:220% 100%;animation:rainbowBar 7s linear infinite;z-index:3}
+@keyframes rainbowBar{to{background-position:220% 0}}
+.top{position:sticky;top:0;z-index:10;padding:12px 13px;background:linear-gradient(115deg,rgba(4,59,45,.97),rgba(8,127,91,.96),rgba(16,185,129,.95));box-shadow:0 8px 20px rgba(3,64,48,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.back{font-size:12px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.10);box-shadow:inset 0 1px rgba(255,255,255,.15);transition:.2s ease}.back:active{transform:scale(.97)}
+.top-title{font-size:13px;text-shadow:0 1px 10px rgba(0,0,0,.16)}
+.hero{padding:10px;background:linear-gradient(135deg,#0b6e4f 0%,#12b886 45%,#ffd166 72%,#f97316 100%);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;top:-70px;right:-45px;background:rgba(255,255,255,.16);animation:heroGlow 5s ease-in-out infinite}
+.hero::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;bottom:-70px;left:-35px;background:rgba(255,255,255,.12);animation:heroGlow 6s ease-in-out infinite reverse}
+@keyframes heroGlow{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-8px,8px,0) scale(1.08)}}
+.hero-link{border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.18);position:relative;z-index:1}
+.hero-link::after{display:none}
+.hero-link{width:min(94%,760px);margin:0 auto}.hero img{width:100%;border-radius:14px;transform:none;transition:transform .35s ease;display:block}.hero-link:active img{transform:scale(1.008)}
+.content{padding:17px 14px 26px}
+h1{font-size:27px;letter-spacing:-.3px;text-shadow:0 2px 12px rgba(8,127,91,.08)}
+.sub{font-size:13.5px;max-width:39ch;margin:0 auto 13px}
+.offer-lead{position:relative;overflow:hidden;border-radius:17px;padding:13px 14px;border:1px solid #9de3c4;box-shadow:var(--shadow-soft)}
+.offer-lead::after{content:"";position:absolute;inset:auto -35px -35px auto;width:95px;height:95px;border-radius:50%;background:rgba(18,184,134,.10)}
+.offer{border-radius:17px;border:1px solid #f1cb5f;box-shadow:var(--shadow-soft)}
+.claim{position:relative;overflow:hidden;border-radius:14px;padding:15px 13px;font-size:18px;box-shadow:0 12px 24px rgba(11,125,86,.20);transition:transform .2s ease,box-shadow .2s ease;isolation:isolate}
+.claim::before,.confirm-share::before,.share-alt::before,.reward-ok::before,.return-claim::before,.next-sponsor::before,.phone-submit::before,.sponsor-btn::before{content:"";position:absolute;inset:0 auto 0 -35%;width:28%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);animation:shineSweep 3.2s ease-in-out infinite}
+@keyframes shineSweep{0%,58%{left:-35%}100%{left:125%}}
+.claim:active{transform:scale(.985);box-shadow:0 7px 15px rgba(11,125,86,.18)}
+.phone-card{grid-template-columns:minmax(0,1fr) 112px;border-radius:16px;padding:10px;box-shadow:var(--shadow-soft);background:linear-gradient(145deg,#f9fdff,#f3fff9);border-color:#cfe8de}
+.phone-card input{min-width:0;height:48px}.phone-submit{position:relative;overflow:hidden;min-height:48px}
+.panel,.share-step-inline,.comment-form{box-shadow:var(--shadow-soft);border-radius:18px}
+.stats{padding:12px 10px;border-radius:13px;box-shadow:0 7px 18px rgba(23,50,77,.05)}
+.like-row{gap:7px}.like-btn{transition:.18s ease}.like-btn:active{transform:scale(.94)}.like-btn.liked{box-shadow:inset 0 0 0 1px #ffd1d1}
+.comment{padding:12px 2px}.comment:last-child{border-bottom:0}.avatar{box-shadow:0 5px 10px rgba(0,0,0,.10)}
+.share-step-inline{padding:15px 12px 12px;background:linear-gradient(160deg,#ffffff 0%,#f4fffb 58%,#f4f7ff 100%);border-color:#d7eee4}
+.share-step-inline h2{font-size:20px;letter-spacing:-.2px}.share-step-inline p{font-size:12.5px}
+.share-target{position:relative;overflow:hidden;border-radius:15px;padding:11px;box-shadow:inset 0 1px #fff,0 8px 18px rgba(8,127,91,.07)}
+.share-target strong{font-size:24px}.share-target strong::first-letter{color:#087f5b}
+.share-alt-row{gap:9px}.share-main-centered{display:block;width:100%;max-width:300px;margin:9px auto 0}.share-alt{position:relative;overflow:hidden;min-height:47px;border-radius:13px;box-shadow:0 9px 18px rgba(0,0,0,.10)}
+.share-ms{background:linear-gradient(135deg,#3478f6,#5a4cf5)}.share-wa{background:linear-gradient(135deg,#14a67a,#25d366)}
+.confirm-share{position:relative;overflow:hidden;min-height:48px;border-radius:13px;margin-top:10px;box-shadow:0 10px 20px rgba(8,127,91,.18)}
+.share-helper{padding:0 3px}.share-return-note{background:#f8fafc;border-radius:10px;padding:7px 8px}
+/* Countdown: compact but high-visibility */
+.share-countdown{border-radius:16px;padding:10px;background:linear-gradient(145deg,#eff8ff 0%,#effff8 100%);box-shadow:0 10px 22px rgba(15,118,110,.08)}
+.countdown-head{display:grid!important;grid-template-columns:1fr auto auto;align-items:center;gap:6px;text-align:left}.countdown-label{font-size:11px;color:#31566d;font-weight:900}.countdown-unit{font-size:10px;color:#5b7284;font-weight:800}.share-countdown .num{min-width:38px;height:36px;border-radius:11px;font-size:20px;box-shadow:0 6px 14px rgba(8,127,91,.22);animation:numPop 1s ease-in-out infinite}
+@keyframes numPop{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.share-progress{height:6px;margin-top:8px;background:#dfeef6}.share-progress i{background:linear-gradient(90deg,#1971c2,#12b886,#f6c453);box-shadow:0 0 10px rgba(18,184,134,.25)}
+.sponsor-preview{margin-top:8px;padding:7px;border-radius:13px;background:linear-gradient(135deg,#ffffff,#f4fffb);border:1px solid #cce7dc;box-shadow:0 7px 16px rgba(8,127,91,.08)}
+.sponsor-preview::before{width:3px;border-radius:4px}
+.sponsor-preview-media{display:grid;grid-template-columns:44px minmax(0,1fr) 28px;align-items:center;gap:8px}.sponsor-preview-media img{width:44px;height:44px;border-radius:10px;object-fit:cover;border:1px solid #dcefe8;background:#eef8f5;box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.sponsor-preview-copy{min-width:0;text-align:left}.sponsor-preview-copy strong{display:block;font-size:11px;color:#17324d;margin:0}.sponsor-preview-copy span{display:block;font-size:9.5px;color:#708090;margin-top:1px}.sponsor-preview-copy a{margin-top:4px;padding:4px 6px;font-size:9px;max-width:100%;background:#f8fffc;border-color:#e0eee8}
+.sponsor-preview-arrow{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#12b886,#087f5b);color:#fff;font-weight:900;box-shadow:0 6px 12px rgba(8,127,91,.18)}
+.sponsored-offer{border-radius:17px;box-shadow:var(--shadow-soft);padding:12px}.sponsor-btn,.next-sponsor,.return-claim{position:relative;overflow:hidden;min-height:44px;border-radius:12px}.sponsor-sub{font-size:10.5px}.sponsor-optional{box-shadow:0 7px 16px rgba(23,50,77,.05)}
+.claim-return{min-height:47px}
+.reward-modal{padding:14px;background:rgba(3,45,34,.62)}.reward-modal-card{width:min(100%,395px);padding:18px 16px 15px;border-radius:24px;box-shadow:0 28px 70px rgba(0,0,0,.30);position:relative;overflow:hidden}
+.reward-modal-card::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#12b886,#1971c2,#f6c453,#e83e8c);background-size:250% 100%;animation:rainbowBar 6s linear infinite}
+.reward-modal-icon{width:62px;height:62px;animation:giftBounce 2.2s ease-in-out infinite}
+@keyframes giftBounce{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-3deg)}}
+.reward-modal-actions{gap:9px}.reward-modal-actions button{min-height:46px;position:relative;overflow:hidden}.reward-again{box-shadow:inset 0 0 0 1px #9de3c4,0 5px 12px rgba(8,127,91,.06)}
+.footer{border-top:1px solid #edf2f0}
+@media(max-width:420px){.content{padding-left:12px;padding-right:12px}.hero{padding:8px}.hero-link{width:94%}.top{padding-left:10px;padding-right:10px}.top-title{font-size:12px}.hero-link::after{display:none}.countdown-head{grid-template-columns:1fr auto auto}.sponsor-preview-media{grid-template-columns:42px minmax(0,1fr) 26px}.sponsor-preview-media img{width:42px;height:42px}.sponsor-preview-arrow{width:26px;height:26px}}
+@media(max-width:360px){.phone-card{grid-template-columns:1fr}.share-alt{font-size:13px;padding:11px 8px}.reward-modal-actions{grid-template-columns:1fr 1fr}.sponsor-preview-copy a{font-size:8.5px}.content{padding-top:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+
+.request-step-inline{margin-top:12px;padding:14px 12px;background:linear-gradient(145deg,#fff,#f5fffb 60%,#f3f7ff);border:1px solid #d7eee4;border-radius:18px;box-shadow:var(--shadow-soft);animation:claimSwap .38s ease both;text-align:center}.request-step-title{margin:0;color:#075b43;font-size:20px;font-weight:900}.request-step-sub{margin:5px 0 11px;color:#667085;font-size:12px;line-height:1.5}.request-box{padding:11px;border-radius:14px;background:#fff;border:1px solid #dcefe8;box-shadow:0 7px 16px rgba(8,127,91,.06);text-align:left}.request-box + .request-box{margin-top:9px}.request-box h4{margin:0;color:#183153;font-size:15px}.request-box p{margin:4px 0 9px;color:#667085;font-size:11px;line-height:1.45}.request-link{position:relative;display:block;width:100%;padding:12px;border-radius:11px;text-align:center;text-decoration:none;color:#fff;background:linear-gradient(90deg,#128c7e,#25d366);font-weight:900;font-size:13px;overflow:hidden;box-shadow:0 8px 16px rgba(37,211,102,.18)}.request-link.secondary{background:linear-gradient(90deg,#0b7d56,#12b886)}.request-status{margin-top:9px;padding:9px 10px;border-radius:10px;background:#effcf6;border:1px solid #bfe6d5;color:#166534;font-size:11px;font-weight:800;line-height:1.45}.next-step-btn{background:linear-gradient(90deg,#0b7d56,#12b886)!important}@media(max-width:380px){.request-step-inline{padding:12px 10px}.request-step-title{font-size:18px}}
+
+
+.tap-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border-radius:999px;background:rgba(0,0,0,.58);color:#fff;font-size:12px;font-weight:900;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.22);animation:tapHint 1.25s ease-in-out infinite;pointer-events:none}
+@keyframes tapHint{0%,100%{transform:translateX(-50%) scale(1);opacity:.9}50%{transform:translateX(-50%) scale(1.06);opacity:1}}
+/* ===== Screenshot-inspired premium mobile UI ===== */
+:root{--mint:#0aa978;--mint-dark:#087f5b;--mint-soft:#e9fff7;--sky:#eaf6ff;--line:#cfe9df;--card:#ffffff;--shadow:0 10px 28px rgba(5,92,67,.10)}
+html{background:#e9fff7}
+body{background:linear-gradient(180deg,#f0fff9 0%,#ffffff 28%,#effff9 100%);font-family:"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif}
+.page{width:min(100%,480px);background:linear-gradient(180deg,#fafffd 0%,#ffffff 48%,#f0fff9 100%);box-shadow:0 18px 60px rgba(3,74,54,.16)}
+.page::before{height:0;background:none;animation:none}
+.campaign-header{height:64px;padding:8px 14px;display:grid;grid-template-columns:42px 30px 1fr 34px;align-items:center;gap:7px;background:linear-gradient(100deg,#087653,#07966d,#08ad7d);box-shadow:0 5px 18px rgba(0,78,57,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+.header-back{width:40px;height:40px;display:grid;place-items:center;padding:0;border:2px solid rgba(255,255,255,.9);border-radius:50%;background:transparent;font-size:34px;line-height:1;font-weight:300;box-shadow:none}
+.brand-mark{width:28px;height:28px;border:2px solid rgba(255,255,255,.92);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:18px;line-height:1;transform:rotate(-18deg)}
+.top-title{margin:0;text-align:left;font-size:22px;font-weight:950;letter-spacing:-.4px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.12)}
+.header-menu{border:0;background:transparent;color:#fff;font-size:31px;line-height:1;cursor:pointer;padding:0;height:40px}
+.hero{padding:0;background:#fff;overflow:hidden}
+.hero::before,.hero::after{display:none}
+.hero-link{width:100%;margin:0;border-radius:0;box-shadow:none;display:block}
+.hero img{width:100%;height:auto;aspect-ratio:16/5.15;object-fit:cover;border-radius:0}
+.tap-hint{bottom:12px;font-size:11px;padding:6px 10px;background:rgba(5,72,53,.76);box-shadow:0 5px 15px rgba(0,0,0,.18)}
+.content{padding:12px 12px 28px;background:linear-gradient(180deg,#f5fffb 0%,#fff 20%,#f8fffc 100%)}
+h1{font-size:0;height:0;margin:0;overflow:hidden}
+.sub{font-size:12px;color:#668078;max-width:100%;margin:0 0 9px;line-height:1.5}
+.offer-lead{margin:0 0 10px;padding:11px 10px;border-radius:18px;border:1px solid #b9ebd7;background:linear-gradient(180deg,#effff8,#e9fff6);color:#08745a;font-size:15px;box-shadow:0 6px 18px rgba(7,127,91,.06);font-weight:950}
+.claim-slot{margin:0}
+.claim{margin-top:0;min-height:54px;border-radius:16px;font-size:17px;background:linear-gradient(90deg,#09986e,#0bbd89);box-shadow:0 10px 22px rgba(8,127,91,.22);border:1px solid rgba(255,255,255,.7)}
+.status{margin:6px 2px 0;font-size:11px;min-height:16px;color:#087f5b}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;padding:8px 5px;margin-top:10px;border:1px solid #d6eee5;border-radius:16px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+.stats button{min-width:0;padding:5px 4px;border-right:1px solid #e5efeb;font-size:11px;font-weight:900;color:#58766d}
+.stats button:last-child{border-right:0;color:#087f5b}
+.stats button:first-child{color:#ef476f}
+.ad-strip{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px;margin-top:10px;padding:9px 10px;text-decoration:none;border:1px solid #bfe8d9;border-radius:16px;background:linear-gradient(105deg,#fffdf0,#f5fff9 62%,#eff8ff);box-shadow:var(--shadow);overflow:hidden}
+.ad-badge{display:grid;place-items:center;min-width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#ff2d65,#f91855);color:#fff;font-size:11px;font-weight:1000;box-shadow:0 7px 14px rgba(249,24,85,.2)}
+.ad-copy{min-width:0;text-align:left}.ad-copy strong{display:block;color:#174d42;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ad-copy small{display:block;color:#70847d;font-size:9.5px;margin-top:2px}.ad-go{padding:8px 9px;border-radius:999px;background:linear-gradient(90deg,#07956b,#10b981);color:#fff;font-size:10px;font-weight:950;white-space:nowrap;box-shadow:0 6px 14px rgba(8,127,91,.16)}
+.panel,.share-step-inline,.request-step-inline,.comment-form{border-radius:20px;border:1px solid #d5eee4;background:#fff;box-shadow:var(--shadow)}
+.share-step-inline{padding:16px 12px 12px;background:linear-gradient(160deg,#fff 0%,#effff9 58%,#f2f8ff 100%)}
+.share-step-inline h2{font-size:20px;color:#075b43}.share-main,.share-alt,.confirm-share{border-radius:15px;min-height:50px}.share-main{background:linear-gradient(135deg,#1977f3,#5b5cf0)}
+.share-alt-row{grid-template-columns:1fr;gap:8px}.share-alt{width:100%}.share-ms{background:linear-gradient(135deg,#1877f2,#4f5ff2)}.share-wa{background:linear-gradient(135deg,#128c7e,#25d366)}
+.request-step-inline{background:linear-gradient(160deg,#fff,#f1fff9);padding:15px 12px}.request-box{border-radius:15px}.request-link{border-radius:14px;min-height:48px}
+.comments{margin-top:10px;padding:0 2px}.comments-title{padding:13px 11px 8px;margin:0;font-size:17px;color:#155e75;background:#fff;border:1px solid #dceee8;border-bottom:0;border-radius:18px 18px 0 0}.comments-title .tag{background:#edf7f3;color:#5d7a71}
+#commentList{background:#fff;border:1px solid #dceee8;border-top:0;border-radius:0 0 18px 18px;padding:0 11px}.comment{padding:12px 0;border-bottom:1px solid #edf2f0;gap:9px}.comment:last-child{border-bottom:0}.avatar{width:42px;height:42px;box-shadow:0 4px 10px rgba(0,0,0,.10);font-size:14px}.name{color:#135f4b}.txt{font-size:12px;color:#445b55}.like-row{margin-top:4px}.like-btn{font-size:10px;padding:3px 6px;background:#f7faf9}.comment-form{margin-top:10px;padding:12px}.footer{padding:18px 12px;background:#ecfff7;color:#5d7a71;border-top:1px solid #d6eee5}
+@media(max-width:380px){.campaign-header{grid-template-columns:38px 28px 1fr 30px}.top-title{font-size:19px}.header-back{width:36px;height:36px}.hero img{aspect-ratio:16/5.4}.offer-lead{font-size:14px}.ad-go{font-size:9px;padding:7px 8px}.ad-badge{min-width:38px;height:38px}}
+
+/* ===== Winner toast popup (top-right) ===== */
+.winner-toast-wrap{position:fixed;top:10px;right:10px;z-index:10000;display:flex;flex-direction:column;align-items:flex-end;gap:8px;pointer-events:none;max-width:min(320px,calc(100vw - 20px))}
+.winner-toast{display:flex;align-items:flex-start;gap:8px;background:linear-gradient(135deg,#ffffff,#f2fff9);border:1px solid #b7ebd1;border-left:4px solid #12b886;border-radius:14px;padding:9px 11px;box-shadow:0 12px 30px rgba(3,74,54,.22);font-size:11.5px;line-height:1.5;color:#17324d;opacity:0;transform:translateX(110%);transition:transform .45s cubic-bezier(.22,.9,.32,1.15),opacity .45s ease;pointer-events:auto}
+.winner-toast.show{opacity:1;transform:translateX(0)}
+.winner-toast.hide{opacity:0;transform:translateX(110%)}
+.winner-toast .wt-icon{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:15px;background:linear-gradient(135deg,#fff3bf,#ffe08a);box-shadow:0 4px 10px rgba(240,140,0,.18)}
+.winner-toast .wt-body{min-width:0;text-align:left}
+.winner-toast .wt-title{font-size:10px;font-weight:900;color:#087f5b;margin-bottom:2px;letter-spacing:.2px}
+.winner-toast .wt-text strong{color:#0b6e4f}
+.winner-toast .wt-text .wt-num{font-variant-numeric:tabular-nums;letter-spacing:.3px}
+
+</style>
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rm1644969-lang.github.io/100gb-test/">
+<meta property="og:site_name" content="100GB FREE">
+<meta property="og:title" content="100GB মোবাইল ডাটা বোনাস— 100GB মোবাইল ডাটা বোনাস">
+<meta property="og:description" content="100GB মোবাইল ডাটা বোনাসের অফারটি দেখুন।">
+<meta property="og:image" content="https://rm1644969-lang.github.io/100gb-test/og-image.png">
+<meta property="og:image:secure_url" content="https://rm1644969-lang.github.io/100gb-test/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="655">
+<meta property="og:image:alt" content="ঈদ মোবারক — 100GB মোবাইল ডাটা বোনাস">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="100GB মোবাইল ডাটা বোনাস — 100GB মোবাইল ডাটা বোনাস">
+<meta name="twitter:description" content="ঈদ উপলক্ষে 100GB মোবাইল ডাটা বোনাসের অফারটি দেখুন।">
+<meta name="twitter:image" content="https://rm1644969-lang.github.io/100gb-test/og-image.png">
+</head>
+<body>
+<div class="page">
+  <header class="top campaign-header">
+    <a class="back header-back" href="https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68" target="_blank" rel="noopener noreferrer" aria-label="ফিরে যান">‹</a>
+    <div class="brand-mark" aria-hidden="true">☾</div>
+    <div class="top-title">100GB FREE</div>
+    <button class="header-menu" type="button" aria-label="মেনু">⋮</button>
+  </header>
+  <div class="hero"><a class="hero-link" href="" target="_blank" rel="noopener noreferrer"><img id="eidBanner" src="eid-banner.webp" alt="ঈদ মোবারক — 100GB মোবাইল ডাটা বোনাস"><span class="tap-hint" aria-hidden="true">👆 ছবিতে ট্যাপ করুন</span></a></div>
+  <main class="content">
+    <h1>ঈদের আনন্দে 100GB মোবাইল ডাটা বোনাস</h1>
+    <div class="sub">অফারটি পেতে আপনার মোবাইল নম্বর দিন এবং ১০ জন বন্ধুর সাথে শেয়ার করুন।</div>
+
+    <div class="offer-lead">🎁 100GB মোবাইল ডাটা বোনাস পেতে আপনার নম্বর দিন</div>
+
+    <div id="claimSlot" class="claim-slot">
+      <button id="claimBtn" class="claim">${OFFER_GB} বোনাস নিন</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div class="stats">
+      <button id="likeAll" type="button" aria-label="লাইক করুন">❤️ <span id="likeCount">20K+</span> লাইক</button>
+      <button id="commentCountBtn" type="button">💬 <span id="commentCount">12K+</span> মন্তব্য</button>
+      <button id="gbPanBtn" type="button">🎁 <span id="gbPanText">100GB</span> পান</button>
+    </div>
+
+    <a class="ad-strip" id="adStrip" href="https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68" target="_blank" rel="noopener noreferrer">
+      <span class="ad-badge">ADS</span>
+      <span class="ad-copy"><strong>এখনই 100GB ইন্টারনেট বোনাস!</strong><small>বিশেষ অফার, সীমিত সময়ের জন্য</small></span>
+      <span class="ad-go">বিস্তারিত দেখুন&nbsp; →</span>
+    </a>
+
+    <div class="comments">
+      <div class="comments-title">মন্তব্য <span class="tag">ডেমো কাউন্ট + আপনার মন্তব্য</span></div>
+      <div id="commentList">
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#0b7d56,#4dabf7)">র</div>
+          <div><div class="comment-meta"><div class="name">রাফি <span class="tag">নমুনা</span></div><span class="time">২ ঘন্টা আগে</span></div><div class="txt">অফারের ধাপগুলো মোবাইলে বুঝতে সহজ লাগছে।</div><div class="like-row"><button class="like-btn" type="button">👍 12</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#1971c2,#4dabf7)">স</div>
+          <div><div class="comment-meta"><div class="name">সুমাইয়া <span class="tag">নমুনা</span></div><span class="time">১ ঘন্টা আগে</span></div><div class="txt">নম্বর দেওয়ার জায়গাটা পরিষ্কারভাবে দেখা যাচ্ছে।</div><div class="like-row"><button class="like-btn" type="button">👍 8</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#e67700,#4dabf7)">ন</div>
+          <div><div class="comment-meta"><div class="name">নাঈম <span class="tag">নমুনা</span></div><span class="time">৫৭ মিনিট আগে</span></div><div class="txt">Messenger শেয়ার বাটনটা এক জায়গায় থাকায় খুঁজে পাওয়া সহজ।</div><div class="like-row"><button class="like-btn" type="button">👍 5</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#7c3aed,#4dabf7)">ম</div>
+          <div><div class="comment-meta"><div class="name">মেহেদী <span class="tag">নমুনা</span></div><span class="time">৪৫ মিনিট আগে</span></div><div class="txt">পেজটা দ্রুত লোড হচ্ছে, মোবাইলে ব্যবহার করা সহজ।</div><div class="like-row"><button class="like-btn" type="button">👍 9</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#be123c,#4dabf7)">ত</div>
+          <div><div class="comment-meta"><div class="name">তানজিম <span class="tag">নমুনা</span></div><span class="time">৩৮ মিনিট আগে</span></div><div class="txt">Offer-এর পরের ধাপ কোথায় আছে সেটা পরিষ্কার।</div><div class="like-row"><button class="like-btn" type="button">👍 4</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#0f766e,#4dabf7)">জ</div>
+          <div><div class="comment-meta"><div class="name">জাকিয়া <span class="tag">নমুনা</span></div><span class="time">৩১ মিনিট আগে</span></div><div class="txt">রিকোয়েস্ট ধাপ টা এক জায়গায় থাকায় ভালো লাগছে।</div><div class="like-row"><button class="like-btn" type="button">👍 7</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#0369a1,#4dabf7)">স</div>
+          <div><div class="comment-meta"><div class="name">সাকিব <span class="tag">নমুনা</span></div><span class="time">২৭ মিনিট আগে</span></div><div class="txt">ছবিতে tap করলে পরের পেজে যাওয়া সহজ হয়েছে।</div><div class="like-row"><button class="like-btn" type="button">👍 3</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#c2410c,#4dabf7)">ম</div>
+          <div><div class="comment-meta"><div class="name">মিম <span class="tag">নমুনা</span></div><span class="time">২৩ মিনিট আগে</span></div><div class="txt">নম্বর দেওয়ার পর কী করতে হবে পরিষ্কার বোঝা যায়।</div><div class="like-row"><button class="like-btn" type="button">👍 6</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#15803d,#4dabf7)">আ</div>
+          <div><div class="comment-meta"><div class="name">আরিফ <span class="tag">নমুনা</span></div><span class="time">১৯ মিনিট আগে</span></div><div class="txt">অফারের শিরোনাম চোখে পড়ার মতো।</div><div class="like-row"><button class="like-btn" type="button">👍 2</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#9333ea,#4dabf7)">ল</div>
+          <div><div class="comment-meta"><div class="name">লিজা <span class="tag">নমুনা</span></div><span class="time">১৪ মিনিট আগে</span></div><div class="txt">মন্তব্যের অংশটি মোবাইলে সুন্দর দেখাচ্ছে।</div><div class="like-row"><button class="like-btn" type="button">👍 5</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#0369a1,#4dabf7)">র</div>
+          <div><div class="comment-meta"><div class="name">রিয়াদ <span class="tag">নমুনা</span></div><span class="time">৯ মিনিট আগে</span></div><div class="txt">শেয়ার থেকে রিকোয়েস্ট পর্যন্ত ধাপগুলো সহজ।</div><div class="like-row"><button class="like-btn" type="button">👍 4</button></div></div>
+        </div>
+        <div class="comment" data-demo="1">
+          <div class="avatar" style="background:linear-gradient(135deg,#0b7d56,#4dabf7)">ম</div>
+          <div><div class="comment-meta"><div class="name">মাহি <span class="tag">নমুনা</span></div><span class="time">এইমাত্র</span></div><div class="txt">পরবর্তী ধাপের বাটন আলাদা করে খুঁজতে হয় না।</div><div class="like-row"><button class="like-btn" type="button">👍 1</button></div></div>
+        </div>
+      </div>
+
+      <div class="comment-form">
+        <div class="cf-row"><input id="commentName" maxlength="40" placeholder="আপনার নাম"></div>
+        <textarea id="commentText" maxlength="180" placeholder="একটি মন্তব্য লিখুন..."></textarea>
+        <button id="commentSend" class="comment-send" type="button">মন্তব্য করুন</button>
+        <div class="small">আপনার মন্তব্য এই ব্রাউজারেই সংরক্ষিত থাকবে।</div>
+      </div>
+    </div>
+  </main>
+  <div class="footer">উপরের “নমুনা” মন্তব্যগুলো UI preview-এর জন্য; এগুলো বাস্তব user testimonial নয়। নতুন মন্তব্য এই ব্রাউজারেই সংরক্ষিত থাকে।</div>
+</div>
+
+
+<!-- Winner toast popup container (top-right corner) -->
+<div class="winner-toast-wrap" id="winnerToastWrap" aria-live="polite"></div>
+
+<script>
+// ===== Winner popup: shows one line every 5s in the top-right corner =====
+const WINNERS=[
+  {city:"ঢাকা",name:"তানভীর আহমেদ",num:"0171****45"},
+  {city:"চট্টগ্রাম",name:"নুসরাত জাহান",num:"0182****32"},
+  {city:"সিলেট",name:"রাকিবুল ইসলাম",num:"0163****78"},
+  {city:"রাজশাহী",name:"সুমাইয়া আক্তার",num:"0194****19"},
+  {city:"খুলনা",name:"ফাহিম হোসেন",num:"0135****64"},
+  {city:"বরিশাল",name:"ফারহানা ইয়াছমিন",num:"0156****90"},
+  {city:"রংপুর",name:"মাহবুব আলম",num:"0147****23"},
+  {city:"ময়মনসিংহ",name:"সাদিয়া আফরিন",num:"0172****55"},
+  {city:"গাজীপুর",name:"নাজমুল হুদা",num:"0183****81"},
+  {city:"নারায়ণগঞ্জ",name:"জান্নাতুল ফেরদৌস",num:"0164****47"},
+  {city:"কুমিল্লা",name:"রেজওয়ান চৌধুরী",num:"0195****26"},
+  {city:"কক্সবাজার",name:"তাসনিয়া তাবাসসুম",num:"0136****93"},
+  {city:"ব্রাহ্মণবাড়িয়া",name:"আল-আমিন সরকার",num:"0157****11"},
+  {city:"চাঁদপুর",name:"মিম সুলতানা",num:"0148****84"},
+  {city:"নোয়াখালী",name:"শাকিল আহমেদ",num:"0173****39"},
+  {city:"ফেনী",name:"মেহনাজ তাবাসসুম",num:"0184****72"},
+  {city:"লক্ষ্মীপুর",name:"মেহেদী হাসান",num:"0165****08"},
+  {city:"পাবনা",name:"তানজিনা আক্তার",num:"0196****51"},
+  {city:"বগুড়া",name:"আশিকুর রহমান",num:"0137****67"},
+  {city:"দিনাজপুর",name:"শারমিন সুলতানা",num:"0158****24"},
+  {city:"কুষ্টিয়া",name:"তৌফিক রহমান",num:"0149****95"},
+  {city:"যশোর",name:"লামিয়া ইসলাম",num:"0174****12"},
+  {city:"সাতক্ষীরা",name:"সাজ্জাদ হোসেন",num:"0185****48"},
+  {city:"ফরিদপুর",name:"সাবিনা ইয়েসমিন",num:"0166****83"},
+  {city:"টাঙ্গাইল",name:"মাহমুদুল হাসান",num:"0197****36"},
+  {city:"জামালপুর",name:"রিফাত আরা",num:"0138****09"},
+  {city:"শেরপুর",name:"সোহেল রানা",num:"0159****62"},
+  {city:"নেত্রকোনা",name:"মালিহা তাসনিম",num:"0141****27"},
+  {city:"কিশোরগঞ্জ",name:"শিহাব উদ্দিন",num:"0175****89"},
+  {city:"মানিকগঞ্জ",name:"নিগার সুলতানা",num:"0186****14"},
+  {city:"মুন্সিগঞ্জ",name:"রুবেল মিয়া",num:"0167****50"},
+  {city:"নরসিংদী",name:"আফরোজা খানম",num:"0198****73"},
+  {city:"রাজবাড়ী",name:"জোবায়ের আহমেদ",num:"0139****28"},
+  {city:"শরীয়তপুর",name:"ফরিদা আক্তার",num:"0151****96"},
+  {city:"মাদারীপুর",name:"মনির হোসেন",num:"0142****31"},
+  {city:"গোপালগঞ্জ",name:"জেসমিন আরা",num:"0176****42"},
+  {city:"সুনামগঞ্জ",name:"শামীম রেজা",num:"0187****79"},
+  {city:"হবিগঞ্জ",name:"রোকসানা বেগম",num:"0168****15"},
+  {city:"মৌলভীবাজার",name:"জাহাঙ্গীর আলম",num:"0199****68"},
+  {city:"নওগাঁ",name:"তানজিলা রহমান",num:"0131****53"},
+  {city:"নাটোর",name:"আরিফুর রহমান",num:"0152****84"},
+  {city:"চাঁপাইনবাবগঞ্জ",name:"নাসরিন আখতার",num:"0143****20"},
+  {city:"সিরাজগঞ্জ",name:"এমরান হোসেন",num:"0177****91"},
+  {city:"গাইবান্ধা",name:"তানিয়া সুলতানা",num:"0188****37"},
+  {city:"কুড়িগ্রাম",name:"শরিফুল ইসলাম",num:"0169****64"},
+  {city:"লালমনিরহাট",name:"সুমনা খাতুন",num:"0191****18"},
+  {city:"নীলফামারী",name:"কামরুল হাসান",num:"0132****75"},
+  {city:"পঞ্চগড়",name:"মৌসুমী আক্তার",num:"0153****49"},
+  {city:"ঠাকুরগাঁও",name:"বাপ্পী খান",num:"0144****82"},
+  {city:"বাগেরহাট",name:"রুম্পা পারভীন",num:"0178****26"}
+];
+(function startWinnerToasts(){
+  // Runs after window load so OFFER_GB from the main script is available.
+  if(document.readyState!=='complete'){window.addEventListener('load',startWinnerToasts,{once:true});return;}
+  const wrap=document.getElementById("winnerToastWrap");
+  if(!wrap) return;
+  let idx=Math.floor(Math.random()*WINNERS.length);
+  function removeToast(el){
+    if(!el || el.dataset.removing) return;
+    el.dataset.removing="1";
+    el.classList.remove("show");
+    el.classList.add("hide");
+    setTimeout(()=>el.remove(),500);
+  }
+  function showToast(){
+    const w=WINNERS[idx%WINNERS.length];
+    idx++;
+    const el=document.createElement("div");
+    el.className="winner-toast";
+    el.innerHTML=`<div class="wt-icon">🎉</div><div class="wt-body"><div class="wt-title">✅ ${OFFER_GB} ইন্টারনেট পেয়েছেন</div><div class="wt-text"><strong>${w.city}</strong> থেকে <strong>${w.name}</strong> উনি ফ্রিতে দশজনকে শেয়ার করে <span class="wt-num">${w.num}</span> নাম্বারে ${OFFER_GB} ইন্টারনেট পেয়েছেন।</div></div>`;
+    wrap.prepend(el);
+    // Keep only the latest toast visible
+    [...wrap.children].forEach(sib=>{ if(sib!==el) removeToast(sib); });
+    requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add("show")));
+    setTimeout(()=>removeToast(el),4200);
+  }
+  showToast();
+  setInterval(showToast,5000);
+})();
+</script>
+
+<script>
+// ===================== EDIT LINKS HERE =====================
+const OFFER_GB="100GB"; // <<< GB VALUE: change only this line to update all GB text
+const LINK_CONFIG={
+  ad1:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68",
+  ad2:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68",
+  heroAd:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68",
+  whatsapp:"https://www.profitableratecpmnetwork.com/ue99waqisg?key=8b9e09117740d3da19446b5b52ff8a68", // <<< WhatsApp destination: change only this line
+  messengerDesktop:"https://m.me/8801609166109",
+  messengerMobile:"https://m.me/8801609166109",
+  messengerShareScheme:"fb-messenger://share/?link="
+};
+// Apply the single GB setting to the static page text too.
+function applyOfferGb(){
+  document.title=`ঈদ মোবারক — ${OFFER_GB} মোবাইল ডাটা বোনাস`;
+  const hero=document.getElementById("eidBanner");
+  if(hero){ hero.alt=`ঈদ মোবারক — ${OFFER_GB} মোবাইল ডাটা বোনাস`; hero.src=`eid-banner.webp?v=${Date.now()}`; }
+  document.querySelectorAll('meta[property="og:title"]').forEach(x=>x.content=`ঈদ মোবারক — ${OFFER_GB} মোবাইল ডাটা বোনাস`);
+  document.querySelectorAll('meta[property="og:description"]').forEach(x=>x.content=`ঈদ উপলক্ষে ${OFFER_GB} মোবাইল ডাটা বোনাসের অফারটি দেখুন।`);
+  document.querySelectorAll('meta[name="twitter:title"]').forEach(x=>x.content=`ঈদ মোবারক — ${OFFER_GB} মোবাইল ডাটা বোনাস`);
+  document.querySelectorAll('meta[name="twitter:description"]').forEach(x=>x.content=`ঈদ উপলক্ষে ${OFFER_GB} মোবাইল ডাটা বোনাসের অফারটি দেখুন।`);
+  const h1=document.querySelector('h1'); if(h1) h1.textContent=`ঈদের আনন্দে ${OFFER_GB} মোবাইল ডাটা বোনাস`;
+  const lead=document.querySelector('.offer-lead'); if(lead) lead.textContent=`🎁 ${OFFER_GB} মোবাইল ডাটা বোনাস পেতে আপনার নম্বর দিন`;
+  const claim=document.getElementById('claimBtn'); if(claim) claim.textContent=`${OFFER_GB} বোনাস নিন`;
+  const gbPan=document.getElementById('gbPanText'); if(gbPan) gbPan.textContent=OFFER_GB;
+}
+applyOfferGb();
+
+const AD_LINKS=[LINK_CONFIG.ad1,LINK_CONFIG.ad2];
+const HERO_AD_LINK=LINK_CONFIG.heroAd;
+const heroLink=document.querySelector(".hero-link");
+const backBtn=document.querySelector(".back");
+if(backBtn){
+  backBtn.href=LINK_CONFIG.ad1;
+  backBtn.target="_blank";
+  backBtn.rel="noopener noreferrer";
+}
+const adStrip=document.getElementById("adStrip");
+if(adStrip) adStrip.href=LINK_CONFIG.ad1;
+if(heroLink){
+  heroLink.href=LINK_CONFIG.heroAd;
+  heroLink.addEventListener('click',()=>{
+    try{
+      sessionStorage.setItem('eid_pending_return','hero-ad');
+      sessionStorage.setItem('eid_current_ad',LINK_CONFIG.heroAd);
+    }catch(e){}
+  });
+}
+
+// Transparent return-visit tracker for this campaign page (not tied to ad clicks).
+const VISIT_GAP_MS=45000;
+function recordCampaignVisit(){
+  try{
+    const key='eid_campaign_visits_v2';
+    const lastKey='eid_campaign_last_visit_v2';
+    let count=Math.max(0,parseInt(localStorage.getItem(key)||'0',10)||0);
+    const last=parseInt(localStorage.getItem(lastKey)||'0',10)||0;
+    const now=Date.now();
+    if(!last || now-last>=VISIT_GAP_MS){
+      count=Math.min(2,count+1);
+      localStorage.setItem(key,String(count));
+      localStorage.setItem(lastKey,String(now));
+    }
+    return count;
+  }catch(e){ return 1; }
+}
+let campaignVisits=recordCampaignVisit();
+
+function getCampaignVisits(){
+  try{return Math.max(0,Math.min(2,parseInt(localStorage.getItem('eid_campaign_visits_v2')||'0',10)||0));}
+  catch(e){return campaignVisits||0;}
+}
+
+function updateVisitProgress(){
+  campaignVisits=getCampaignVisits();
+  const countEl=document.getElementById('visitProgressCount');
+  const bar=document.getElementById('visitProgressBar');
+  const wrap=document.getElementById('visitProgress');
+  const note=document.getElementById('visitProgressNote');
+  if(countEl) countEl.textContent=`${campaignVisits}/2`;
+  if(bar) bar.style.width=(campaignVisits/2*100)+'%';
+  if(wrap) wrap.classList.toggle('visit-done',campaignVisits>=2);
+  if(note){
+    note.textContent=campaignVisits>=2
+      ? `✓ ২টি অভিযানের ভিজিট সম্পন্ন হয়েছে। এখন চূড়ান্ত ${OFFER_GB} রিকোয়েস্ট ধাপ প্রস্তুত।`
+      : `আরও ${2-campaignVisits}টি অভিযানের ভিজিট বাকি। আবার এই পেজে ফিরলে অগ্রগতি আপডেট হবে।`;
+  }
+}
+
+const claimSlot=document.getElementById("claimSlot");
+const status=document.getElementById("status");
+const commentList=document.getElementById("commentList");
+const commentName=document.getElementById("commentName");
+const commentText=document.getElementById("commentText");
+const commentSend=document.getElementById("commentSend");
+const likeCount=document.getElementById("likeCount");
+const DEMO_COMMENT_COUNT=12;
+const commentCount=document.getElementById("commentCount");
+const likeAll=document.getElementById("likeAll");
+
+function esc(s){return String(s||"").replace(/[&<>\"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m]));}
+function initials(name){return (String(name||"U").trim().split(/\s+/).map(x=>x[0]).join("").slice(0,2)||"U").toUpperCase();}
+function fmtAgo(ts){
+  const sec=Math.max(0,Math.floor((Date.now()-Number(ts||Date.now()))/1000));
+  if(sec<60)return "এইমাত্র";
+  const min=Math.floor(sec/60); if(min<60)return min+" মিনিট আগে";
+  const hr=Math.floor(min/60); if(hr<24)return hr+" ঘন্টা আগে";
+  const d=Math.floor(hr/24); return d+" দিন আগে";
+}
+
+// Claim button morphs into the phone field in the same location.
+document.getElementById("claimBtn").addEventListener("click",()=>{
+  claimSlot.innerHTML=`<div class="phone-card"><input id="phone" type="tel" inputmode="numeric" maxlength="11" placeholder="০১XXXXXXXXX"><button id="submitBtn" class="phone-submit">জমা দিন</button></div>`;
+  claimSlot.classList.add("reveal");
+  const phone=document.getElementById("phone");
+  phone.focus();
+  document.getElementById("submitBtn").addEventListener("click",submitPhone);
+  phone.addEventListener("keydown",e=>{if(e.key==="Enter")submitPhone();});
+});
+
+function submitPhone(){
+  const phone=document.getElementById("phone");
+  const raw=(phone?.value||"").replace(/\s+/g,"");
+  if(!/^01\d{9}$/.test(raw)){
+    status.textContent="সঠিক ১১ সংখ্যার মোবাইল নম্বর দিন।";
+    status.style.color="#c92a2a";
+    phone?.focus();
+    return;
+  }
+  status.textContent="নম্বর গ্রহণ করা হয়েছে ✓";
+  status.style.color="#087f5b";
+  try{localStorage.setItem("eid_offer_phone",raw);}catch(e){}
+
+  claimSlot.innerHTML=`<div class="share-step-inline" id="shareStepInline">
+    <h2>১০ জন বন্ধুর সাথে শেয়ার করুন</h2>
+    <div class="share-target"><strong><span id="shareDoneCount">0</span>/10</strong><span>জনের সাথে শেয়ার করার লক্ষ্য</span></div>
+    <button id="shareMainBtn" class="share-alt share-ms share-main-centered" type="button">💬 Messenger-এ শেয়ার করুন</button>
+    <button id="confirmShareBtn" class="confirm-share hidden next-step-btn" type="button">➡️ 100GB বোনাসের পরের ধাপে যান</button>
+    <div class="share-helper">Messenger-এ মেসেজ পাঠিয়ে এই পেজে ফিরে আসুন। ফিরে এলে পরের ধাপটি দেখাবে।</div>
+    <div id="shareReturnNote" class="share-return-note">প্রথমে Messenger-এ শেয়ার করুন।</div>
+  </div>`;
+
+  const shareMainBtn=document.getElementById("shareMainBtn");
+  const confirmShareBtn=document.getElementById("confirmShareBtn");
+  const shareDoneCount=document.getElementById("shareDoneCount");
+  const shareReturnNote=document.getElementById("shareReturnNote");
+  let shareDone=0;
+  let shareMode='confirm';
+  if(shareDoneCount) shareDoneCount.textContent='0';
+
+  const shareText=`🎁 আমি ${OFFER_GB} মোবাইল ডাটা বোনাসের জন্য আবেদন করেছি। অফারটি দেখতে এখানে দেখুন।`;
+  const shareUrl=location.href;
+  const messengerUrl=LINK_CONFIG.messengerMobile;
+
+  function markSharePending(){
+    try{sessionStorage.setItem('eid_messenger_pending_return','1');}catch(e){}
+    confirmShareBtn.classList.add('hidden');
+  }
+
+  function showNextStepButton(){
+    shareMode='next';
+    confirmShareBtn.classList.remove('hidden');
+    confirmShareBtn.disabled=false;
+    confirmShareBtn.textContent=`➡️ ${OFFER_GB} বোনাসের পরের ধাপে যান`;
+    confirmShareBtn.classList.add('next-step-btn');
+    shareReturnNote.textContent='Messenger থেকে ফিরে এসেছেন ✓ এখন পরের ধাপে যান।';
+  }
+
+  async function openMessenger(){
+    markSharePending();
+    const payload={title:'ঈদ স্পেশাল অফার',text:shareText,url:shareUrl};
+    try{navigator.clipboard?.writeText(`${shareText}\n${shareUrl}`);}catch(e){}
+
+    const isMobile=/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent||'');
+    if(isMobile && navigator.share){
+      try{
+        await navigator.share(payload);
+        shareReturnNote.textContent='শেয়ার প্যানেল খোলা হয়েছে। Messenger নির্বাচন করে পাঠিয়ে এই পেজে ফিরে আসুন।';
+        return;
+      }catch(e){
+        // User may have closed the native share panel; try Messenger directly below.
+      }
+    }
+
+    if(isMobile){
+      const nativeShare=`${LINK_CONFIG.messengerShareScheme}${encodeURIComponent(shareUrl)}`;
+      let fallbackTimer=setTimeout(()=>{
+        if(document.visibilityState!=='hidden' && navigator.share){
+          navigator.share(payload).catch(()=>{});
+        }else if(document.visibilityState!=='hidden'){
+          window.location.href=messengerUrl;
+        }
+      },900);
+      const clearFallback=()=>clearTimeout(fallbackTimer);
+      document.addEventListener('visibilitychange',clearFallback,{once:true});
+      try{window.location.href=nativeShare;}catch(e){window.location.href=messengerUrl;}
+    }else{
+      window.open(`${LINK_CONFIG.messengerDesktop}?ref=share`,'_blank','noopener,noreferrer');
+    }
+    shareReturnNote.textContent='Messenger-এর শেয়ার/ফরওয়ার্ড স্ক্রিন খুলবে। মেসেজ পাঠিয়ে এই পেজে ফিরে আসুন।';
+  }
+
+  let timedBackArmed=false;
+  function armTimedBackToWhatsApp(){
+    if(timedBackArmed) return;
+    timedBackArmed=true;
+    try{history.pushState({eidBackGuard:true},'',location.href);}catch(e){}
+    const started=Date.now();
+    const onPop=()=>{
+      if(Date.now()-started <= 5000){
+        window.location.href=LINK_CONFIG.whatsapp;
+      }else{
+        window.removeEventListener('popstate',onPop);
+      }
+    };
+    window.addEventListener('popstate',onPop);
+    setTimeout(()=>window.removeEventListener('popstate',onPop),5200);
+  }
+
+  function handleMessengerReturn(){
+    let pending=false;
+    try{pending=sessionStorage.getItem('eid_messenger_pending_return')==='1';}catch(e){}
+    if(pending){
+      try{sessionStorage.removeItem('eid_messenger_pending_return');}catch(e){}
+      shareDone=10;
+      try{localStorage.setItem('eid_share_done','10');}catch(e){}
+      if(shareDoneCount) shareDoneCount.textContent='10';
+      showNextStepButton();
+      armTimedBackToWhatsApp();
+    }
+  }
+
+  function sendMessenger(message){
+    try{navigator.clipboard?.writeText(message);}catch(e){}
+    try{window.open(messengerUrl,'_blank','noopener,noreferrer');return true;}
+    catch(e){window.location.href=messengerUrl;return true;}
+  }
+
+  // All WhatsApp request/claim buttons use the single LINK_CONFIG.whatsapp link.
+  function sendWhatsApp(message){
+    const url=LINK_CONFIG.whatsapp;
+    try{window.open(url,'_blank','noopener,noreferrer');return true;}
+    catch(e){window.location.href=url;return true;}
+  }
+
+  function renderRequestStep(){
+    const phone=localStorage.getItem('eid_offer_phone')||'';
+    const msg1=`আমি ${OFFER_GB} রিকোয়েস্ট করেছি\nমোবাইল নম্বর: ${phone}`;
+    const pending=sessionStorage.getItem('eid_offer_request_pending_v2')==='1';
+    const returned=sessionStorage.getItem('eid_offer_request_returned_v2')==='1';
+    const completed=localStorage.getItem('eid_offer_request_sent_v2')==='1';
+
+    claimSlot.innerHTML=`<div class="request-step-inline" id="requestStep">
+      <h3 class="request-step-title">${OFFER_GB} রিকোয়েস্ট</h3>
+      <p class="request-step-sub">প্রথমে আপনার ${OFFER_GB} রিকোয়েস্ট পাঠান।</p>
+      <div id="requestBox" class="request-box ${completed?'hidden':''}">
+        <h4>📲 WhatsApp-এ রিকোয়েস্ট পাঠান</h4>
+        <p>WhatsApp খুলবে। মেসেজটি পাঠিয়ে এই পেজে ফিরে আসুন।</p>
+        <button id="requestOneGbBtn" class="request-link secondary" type="button">📲 WhatsApp-এ রিকোয়েস্ট পাঠান</button>
+      </div>
+      <div id="requestSentBox" class="request-status ${completed?'':'hidden'}">✅ রিকোয়েস্ট পাঠানো হয়েছে।</div>
+      <div id="finalRequestBox" class="request-box ${completed?'':'hidden'}">
+        <h4>🎁 শেষ ধাপ</h4>
+        <p>এখন ${OFFER_GB} দেওয়ার জন্য চূড়ান্ত মেসেজ পাঠান।</p>
+        <button id="takeOneGbBtn" class="request-link secondary" type="button">🟢 ${OFFER_GB} নিন</button>
+      </div>
+      <div id="finalDoneBox" class="request-status hidden">✅ চূড়ান্ত মেসেজ পাঠানো হয়েছে।</div>
+    </div>`;
+
+    const requestBtn=document.getElementById('requestOneGbBtn');
+    const takeBtn=document.getElementById('takeOneGbBtn');
+    requestBtn?.addEventListener('click',()=>{
+      // Do NOT mark the first request as completed yet. First wait until
+      // WhatsApp opens and the user actually returns to this page.
+      try{
+        sessionStorage.setItem('eid_offer_request_pending_v2','1');
+        sessionStorage.removeItem('eid_offer_request_hidden_v2');
+        sessionStorage.removeItem('eid_offer_request_returned_v2');
+      }catch(e){}
+      sendWhatsApp(msg1);
+    });
+    takeBtn?.addEventListener('click',()=>{
+      const msg2=`আমাকে এখন ${OFFER_GB} দেন\nমোবাইল নম্বর: ${phone}`;
+      sendWhatsApp(msg2);
+      document.getElementById('finalRequestBox')?.remove();
+      document.getElementById('finalDoneBox')?.classList.remove('hidden');
+      localStorage.setItem('eid_offer_final_sent_v2','1');
+      status.textContent='চূড়ান্ত WhatsApp মেসেজ প্রস্তুত করা হয়েছে ✓';
+      status.style.color='#087f5b';
+    });
+
+    if(completed){
+      document.getElementById('finalRequestBox')?.classList.remove('hidden');
+      return;
+    }
+    // Only unlock the second WhatsApp button after the user has actually
+    // left this page for WhatsApp and then returned to the website.
+    if(pending && returned){
+      sessionStorage.removeItem('eid_offer_request_pending_v2');
+      sessionStorage.removeItem('eid_offer_request_hidden_v2');
+      sessionStorage.removeItem('eid_offer_request_returned_v2');
+      localStorage.setItem('eid_offer_request_sent_v2','1');
+      document.getElementById('requestBox')?.remove();
+      document.getElementById('requestSentBox')?.classList.remove('hidden');
+      document.getElementById('finalRequestBox')?.classList.remove('hidden');
+    }
+  }
+
+  function confirmShare(){
+    if(shareMode==='next'){renderRequestStep();return;}
+  }
+
+  shareMainBtn.addEventListener('click',openMessenger);
+  confirmShareBtn.addEventListener('click',confirmShare);
+
+  function maybeRevealFinalRequest(){
+    if(!document.getElementById('requestStep')) return;
+    const pending=sessionStorage.getItem('eid_offer_request_pending_v2')==='1';
+    const hidden=sessionStorage.getItem('eid_offer_request_hidden_v2')==='1';
+    if(pending && hidden){
+      try{sessionStorage.setItem('eid_offer_request_returned_v2','1');}catch(e){}
+      renderRequestStep();
+    }
+  }
+
+  handleMessengerReturn();
+  window.addEventListener('pageshow',()=>{handleMessengerReturn();maybeRevealFinalRequest();});
+  window.addEventListener('blur',()=>{
+    if(sessionStorage.getItem('eid_offer_request_pending_v2')==='1'){
+      try{sessionStorage.setItem('eid_offer_request_hidden_v2','1');}catch(e){}
+    }
+  });
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='hidden' && sessionStorage.getItem('eid_offer_request_pending_v2')==='1'){
+      try{sessionStorage.setItem('eid_offer_request_hidden_v2','1');}catch(e){}
+    }
+    if(document.visibilityState==='visible'){
+      handleMessengerReturn();
+      maybeRevealFinalRequest();
+    }
+  });
+  try{localStorage.setItem('eid_offer_share_started','1');}catch(e){}
+  claimSlot.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+likeAll.addEventListener("click",()=>{
+  const liked=likeAll.dataset.liked==="1";
+  let raw=String(document.getElementById("likeCount")?.textContent||"20K+").trim().replace(/,/g,"");
+  let n=/K\+?$/.test(raw) ? parseFloat(raw.replace(/K\+?$/,""))*1000 : parseInt(raw,10)||20000;
+  n+=liked?-1:1;
+  likeAll.dataset.liked=liked?"0":"1";
+  const shown=n>=1000 ? (n/1000).toFixed(1).replace(/\.0$/,"")+"K" : String(n);
+  likeAll.innerHTML=`❤️ <span id="likeCount">${shown}</span> লাইক`;
+  likeAll.style.color=liked?"":"#e03131";
+  sendCommentWhatsApp(`${liked?'লাইক সরানো হয়েছে':'লাইক করেছেন'}\n${OFFER_GB} অফার পেজে লাইক করা হয়েছে`);
+});
+
+const commentCountBtn=document.getElementById("commentCountBtn");
+commentCountBtn?.addEventListener("click",()=>{
+  sendCommentWhatsApp(`মন্তব্য/অফার সম্পর্কে জানতে চাই\n${OFFER_GB} অফার`);
+});
+
+const gbPanBtn=document.getElementById("gbPanBtn");
+gbPanBtn?.addEventListener("click",()=>{
+  sendCommentWhatsApp(`আমি ${OFFER_GB} পেতে চাই।`);
+});
+
+function sendCommentWhatsApp(message){
+  const url=LINK_CONFIG.whatsapp;
+  try{window.open(url,'_blank','noopener,noreferrer');return true;}catch(e){window.location.href=url;return true;}
+}
+function bindCommentWhatsApp(){
+  if(commentList.dataset.waBound==='1') return;
+  commentList.dataset.waBound='1';
+  commentList.addEventListener('click',e=>{
+    if(e.target.closest('.like-btn')) return;
+    const item=e.target.closest('.comment'); if(!item) return;
+    const name=item.querySelector('.name')?.textContent?.trim()||'একজন ব্যবহারকারী';
+    const text=item.querySelector('.txt')?.textContent?.trim()||'মন্তব্যে ক্লিক করা হয়েছে';
+    sendCommentWhatsApp(`কমেন্টে ক্লিক করেছেন\nনাম: ${name}\nমন্তব্য: ${text}`);
+  });
+}
+bindCommentWhatsApp();
+
+function bindCommentLikes(){
+  commentList.querySelectorAll(".like-btn").forEach(btn=>{
+    if(btn.dataset.bound)return;
+    btn.dataset.bound="1";
+    btn.addEventListener("click",()=>{
+      const liked=btn.dataset.liked==="1";
+      const m=btn.textContent.match(/([0-9]+)/); let n=m?Number(m[1]):0;
+      n+=liked?-1:1; btn.dataset.liked=liked?"0":"1";
+      btn.textContent="👍 "+n; btn.classList.toggle("liked",!liked);
+
+      const item=btn.closest('.comment');
+      const name=item?.querySelector('.name')?.textContent?.trim() || 'একজন ব্যবহারকারী';
+      const text=item?.querySelector('.txt')?.textContent?.trim() || 'একটি মন্তব্যে লাইক করা হয়েছে';
+      sendCommentWhatsApp(`কমেন্টে লাইক করেছেন\nনাম: ${name}\nমন্তব্য: ${text}`);
+    });
+  });
+}
+
+function refreshCommentCount(){
+  const local=(()=>{try{return JSON.parse(localStorage.getItem("eid_offer_comments")||"[]")}catch{return []}})();
+  commentCount.textContent="12K+";
+  localStorage.setItem("eid_offer_comments_count",String(local.length));
+}
+
+function loadLocalComments(){
+  let arr=[]; try{arr=JSON.parse(localStorage.getItem("eid_offer_comments")||"[]")}catch(e){arr=[]}
+  arr.forEach(c=>{
+    const el=document.createElement("div"); el.className="comment"; el.dataset.local="1";
+    const bg=["#7c3aed","#0f766e","#be123c","#0369a1"][Math.abs(String(c.name||"").charCodeAt(0)||0)%4];
+    el.innerHTML=`<div class="avatar" style="background:${bg}">${esc(initials(c.name))}</div><div><div class="comment-meta"><div class="name">${esc(c.name)}</div><span class="time">${fmtAgo(c.ts)}</span></div><div class="txt">${esc(c.text)}</div><div class="like-row"><button class="like-btn" type="button">👍 0</button></div></div>`;
+    commentList.prepend(el);
+  });
+  bindCommentLikes(); refreshCommentCount();
+}
+
+commentSend.addEventListener("click",()=>{
+  const name=commentName.value.trim(), txt=commentText.value.trim();
+  if(name.length<2){commentName.focus();return;}
+  if(txt.length<2){commentText.focus();return;}
+  const item={name,text:txt,ts:Date.now()};
+  let arr=[]; try{arr=JSON.parse(localStorage.getItem("eid_offer_comments")||"[]")}catch(e){arr=[]}
+  arr.unshift(item); arr=arr.slice(0,20); localStorage.setItem("eid_offer_comments",JSON.stringify(arr));
+  const el=document.createElement("div"); el.className="comment"; el.dataset.local="1";
+  const bg=["#7c3aed","#0f766e","#be123c","#0369a1"][Math.abs(String(name).charCodeAt(0)||0)%4];
+  el.innerHTML=`<div class="avatar" style="background:${bg}">${esc(initials(name))}</div><div><div class="comment-meta"><div class="name">${esc(name)}</div><span class="time">এইমাত্র</span></div><div class="txt">${esc(txt)}</div><div class="like-row"><button class="like-btn" type="button">👍 0</button></div></div>`;
+  commentList.prepend(el); bindCommentLikes(); refreshCommentCount();
+  commentName.value=""; commentText.value="";
+});
+
+try{
+  const endAt=Number(localStorage.getItem("eid_offer_share_countdown_end")||0);
+  if(endAt>0){
+    if(endAt<=Date.now()){
+      // Render the share step only after the user has already entered the phone flow.
+    }
+  }
+}catch(e){}
+
+loadLocalComments();
+setInterval(()=>commentList.querySelectorAll(".comment[data-local=\"1\"] .time").forEach((el,i)=>{
+  try{const arr=JSON.parse(localStorage.getItem("eid_offer_comments")||"[]"); if(arr[i]) el.textContent=fmtAgo(arr[i].ts);}catch(e){}
+}),30000);
+</script>
+</body>
+</html>
